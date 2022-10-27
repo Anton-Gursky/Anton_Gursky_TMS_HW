@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54882824-b3c4-44fd-a655-0d3263ed5460" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,8 @@
       <option name="presentableId" value="Default" />
       <updated>1666367803173</updated>
       <workItem from="1666367805767" duration="2624000" />
-      <workItem from="1666373954545" duration="1303000" />
+      <workItem from="1666373954545" duration="3604000" />
+      <workItem from="1666904122621" duration="68000" />
     </task>
     <servers />
   </component>
