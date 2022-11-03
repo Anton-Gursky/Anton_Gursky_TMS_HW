@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Task_3 {
 
     static Scanner scanner = new Scanner(System.in);
-    
+
     public static void main (String [] args){
 
         int quoteNum = 0;
