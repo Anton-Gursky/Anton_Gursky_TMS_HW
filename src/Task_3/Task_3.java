@@ -4,11 +4,14 @@ import java.util.Scanner;
 
 public class Task_3 {
 
+    static Scanner scanner = new Scanner(System.in);
+    
     public static void main (String [] args){
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите число:");
-        int num = in.nextInt();
+
         int quoteNum = 0;
+
+        System.out.println("Введите число:");
+        int num = scanner.nextInt();
 
         if (num > 0 && num < 15){
             System.out.println("Группа 1");
@@ -29,7 +32,5 @@ public class Task_3 {
         for (int i = 0; i < quoteNum; i++){
             System.out.println("Цитата");
         }
-
-        in.close();
     }
 }
