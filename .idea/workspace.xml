@@ -52,7 +52,7 @@
       <workItem from="1666367805767" duration="2624000" />
       <workItem from="1666373954545" duration="3604000" />
       <workItem from="1666904122621" duration="68000" />
-      <workItem from="1667591243194" duration="13449000" />
+      <workItem from="1667591243194" duration="15530000" />
     </task>
     <task id="LOCAL-00001" summary="Task_4 added">
       <created>1667570061108</created>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667638509989</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Task_4 added">
+      <created>1667639934830</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667639934830</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,5 +123,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Task_4 added" />
     <option name="LAST_COMMIT_MESSAGE" value="Task_4 added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Anton_Gursky_TMS_HW$Task_4_8.ic" NAME="Task_4_8 Coverage Results" MODIFIED="1667641183988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Task_4.*</FILTER>
+    </SUITE>
   </component>
 </project>
