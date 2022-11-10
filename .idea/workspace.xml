@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54882824-b3c4-44fd-a655-0d3263ed5460" name="Changes" comment="">
+    <list default="true" id="54882824-b3c4-44fd-a655-0d3263ed5460" name="Changes" comment="Task_5_4 added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +54,35 @@
       <workItem from="1666904122621" duration="68000" />
       <workItem from="1666907327995" duration="1206000" />
     </task>
+    <task id="LOCAL-00001" summary="Task_5 added">
+      <created>1667942119654</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667942119654</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Task_5_2 added">
+      <created>1667946235075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667946235075</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Task_5_3 added">
+      <created>1667946634721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667946634721</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Task_5_4 added">
+      <created>1668002589190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668002589190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,5 +110,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Task_5 added" />
+    <MESSAGE value="Task_5_2 added" />
+    <MESSAGE value="Task_5_3 added" />
+    <MESSAGE value="Task_5_4 added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task_5_4 added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Anton_Gursky_TMS_HW$Task_4_8.ic" NAME="Task_4_8 Coverage Results" MODIFIED="1667641183988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Task_4.*</FILTER>
+    </SUITE>
   </component>
 </project>
