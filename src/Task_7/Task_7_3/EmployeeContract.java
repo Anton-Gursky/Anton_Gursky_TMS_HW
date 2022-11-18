@@ -15,11 +15,10 @@ public class EmployeeContract extends Documents{
 
     @Override
     public String toString() {
-        return "EmployeeContract{" +
+        return "Контракт с сотрудником" + "\n" +
                 "Дата окончания контракта: " + contractEndDate + "\n" +
-                "Имя работника: '" + employeeName + '\n' +
+                "Имя работника: " + employeeName + '\n' +
                 "Номер документа: " + documentNumber + "\n" +
-                "Дата: " + date +
-                '}';
+                "Дата: " + date + "\n";
     }
 }

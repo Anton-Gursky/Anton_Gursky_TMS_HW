@@ -15,11 +15,10 @@ public class FinancialInvoice extends Documents{
 
     @Override
     public String toString() {
-        return "FinancialInvoice{" +
+        return "Финансовая накладная" + "\n" +
                 "Итоговая сумма за месяц: " + monthResultSum + "\n" +
                 "Код департамента: " + departmentCode + "\n" +
                 "Номер документа: " + documentNumber + "\n" +
-                "Дата: " + date + "\n" +
-                '}';
+                "Дата: " + date + "\n";
     }
 }

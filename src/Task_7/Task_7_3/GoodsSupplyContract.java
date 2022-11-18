@@ -15,11 +15,10 @@ public class GoodsSupplyContract extends Documents{
 
     @Override
     public String toString() {
-        return "GoodsSupplyContract{" +
+        return "Контракт на поставку товаров" + "\n" +
                 "Тип предмета: " + goodsType + '\n' +
                 "Количество предметов: " + numOfGoods + '\n' +
                 "Номер документа: " + documentNumber + '\n' +
-                "Дата: " + date +
-                '}';
+                "Дата: " + date + "\n";
     }
 }
