@@ -4,12 +4,22 @@ import java.util.Date;
 
 public class FinancialInvoice extends Documents{
 
-    int monthResultSum;
-    int departmentCode;
+    public int monthResultSum;
+    public int departmentCode;
 
     public FinancialInvoice(int documentNumber, Date date, int monthResultSum, int departmentCode) {
         super(documentNumber, date);
         this.monthResultSum = monthResultSum;
         this.departmentCode = departmentCode;
+    }
+
+    @Override
+    public String toString() {
+        return "FinancialInvoice{" +
+                "Итоговая сумма за месяц: " + monthResultSum + "\n" +
+                "Код департамента: " + departmentCode + "\n" +
+                "Номер документа: " + documentNumber + "\n" +
+                "Дата: " + date + "\n" +
+                '}';
     }
 }

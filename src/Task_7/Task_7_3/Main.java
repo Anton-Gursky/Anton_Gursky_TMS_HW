@@ -20,6 +20,8 @@ public class Main {
         register.addDocument(financialInvoice);
 
         //Вывод информации об элементах
-        register.showDocumentInfo(0);
+        register.showDocumentInfo(employeeContract);
+        register.showDocumentInfo(goodsSupplyContract);
+        register.showDocumentInfo(financialInvoice);
     }
 }
