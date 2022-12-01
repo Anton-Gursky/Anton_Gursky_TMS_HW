@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        Vector firstVector = new Vector(2, 20, 5, 10);
+        Vector firstVector = new Vector(2, 20);
         Vector secondVector = new Vector(7, 9);
 
         //Рассчитываем длину векторов
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Трехмерные векторы");
         System.out.println("------------------------------------------");
         //Создаем трехмерные векторы
-        ThreeDimensionalVector firstVector3D = new ThreeDimensionalVector(1, 1, 1, 5, 7,8);
+        ThreeDimensionalVector firstVector3D = new ThreeDimensionalVector(1, 1, 1);
         ThreeDimensionalVector secondVector3D = new ThreeDimensionalVector(5, 9, 1);
 
         //Рассчитываем длину векторов
