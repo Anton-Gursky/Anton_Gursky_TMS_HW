@@ -44,12 +44,42 @@ public class DocumentNumber {
                 System.out.print("/");
             }
         }
+        System.out.println();
+    }
+
+    public static String customReplaceAll(String str, String oldStr, String newStr) {
+
+        if ("".equals(str) || "".equals(oldStr) || oldStr.equals(newStr)) {
+            return str;
+        }
+        if (newStr == null) {
+            newStr = "";
+        }
+        final int strLength = str.length();
+        final int oldStrLength = oldStr.length();
+        stringBuilder = new StringBuilder(str);
+
+        for (int i = 0; i < strLength; i++) {
+            int index = stringBuilder.indexOf(oldStr, i);
+
+            if (index == -1) {
+                if (i == 0) {
+                    return str;
+                }
+                return stringBuilder.toString();
+            }
+            stringBuilder.replace(index, index + oldStrLength, newStr);
+
+        }
+        return stringBuilder.toString();
     }
 
     //Выводим на экран буквы из номера документа в формате "Letters:yyy/yyy/y/y" в верхнем регистре (реализовать с помощью класса StringBuilder)
     public static void printLettersToUpperCase(String string){
 
-        stringBuilder = new StringBuilder(string);
+        System.out.println(DocumentNumber.customReplaceAll(string, "A", ""));
 
     }
+
+
 }
