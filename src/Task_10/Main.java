@@ -6,28 +6,29 @@ public class Main {
 
         Vector firstVector = new Vector(2, 20);
         Vector secondVector = new Vector(7, 9);
+        Vector vectors = new Vector();
 
         //Рассчитываем длину векторов
         firstVector.vectorLength();
         secondVector.vectorLength();
 
         //Рассчитываем скалярное произведение векторов
-        Vector.scalarProduct(firstVector,secondVector);
+        vectors.scalarProduct(firstVector,secondVector);
 
         //Рассчитываем сумму векторов
-        Vector.vectorAddition(firstVector, secondVector);
+        vectors.vectorAddition(firstVector, secondVector);
 
         //Рассчитываем разность векторов
-        Vector.vectorSubtraction(firstVector, secondVector);
+        vectors.vectorSubtraction(firstVector, secondVector);
 
         //Создаем массив случайных векторов
-        Vector.randomVectorsArray(5);
-        for (int i = 0; i < Vector.randomVectorsArray(5).length; i++){
-            System.out.println(Vector.vectors[i]);
+        vectors.randomVectorsArray(5);
+        for (int i = 0; i < vectors.randomVectorsArray(5).length; i++){
+            System.out.println(vectors.vectors[i]);
         }
 
         //Сравнение векторов
-        Vector.vectorComparison(firstVector, secondVector);
+        vectors.vectorComparison(firstVector, secondVector);
 
         System.out.println("------------------------------------------");
         System.out.println("Трехмерные векторы");
@@ -35,27 +36,28 @@ public class Main {
         //Создаем трехмерные векторы
         ThreeDimensionalVector firstVector3D = new ThreeDimensionalVector(1, 1, 1);
         ThreeDimensionalVector secondVector3D = new ThreeDimensionalVector(5, 9, 1);
+        ThreeDimensionalVector threeDimensionalVector = new ThreeDimensionalVector();
 
         //Рассчитываем длину векторов
         firstVector3D.vectorLength();
         secondVector3D.vectorLength();
 
         //Рассчитываем скалярное произведение векторов
-        ThreeDimensionalVector.scalarProduct(firstVector3D, secondVector3D);
+        threeDimensionalVector.scalarProduct(firstVector3D, secondVector3D);
 
         //Рассчитываем сумму векторов
-        ThreeDimensionalVector.vectorAddition(firstVector3D, secondVector3D);
+        threeDimensionalVector.vectorAddition(firstVector3D, secondVector3D);
 
         //Рассчитываем разность векторов
-        ThreeDimensionalVector.vectorSubtraction(firstVector3D, secondVector3D);
+        threeDimensionalVector.vectorSubtraction(firstVector3D, secondVector3D);
 
         //Создаем массив случайных векторов
-        ThreeDimensionalVector.randomVectorsArray(3);
-        for (int i = 0; i < ThreeDimensionalVector.randomVectorsArray(3).length; i++){
-            System.out.println(ThreeDimensionalVector.vectors[i]);
+        threeDimensionalVector.randomVectorsArray(3);
+        for (int i = 0; i < threeDimensionalVector.randomVectorsArray(3).length; i++){
+            System.out.println(threeDimensionalVector.vectors[i]);
         }
 
         //Сравнение векторов
-        ThreeDimensionalVector.vectorComparison(firstVector3D, secondVector3D);
+        threeDimensionalVector.vectorComparison(firstVector3D, secondVector3D);
     }
 }

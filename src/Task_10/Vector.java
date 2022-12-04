@@ -7,11 +7,14 @@ public class Vector {
     public int y;
     //Рассчитываемые величины
     public double vectorLength;
-    public static double scalarProduct;
-    public static Vector sumVector;
-    public static Vector difVector;
-    public static Vector[] vectors;
+    public double scalarProduct;
+    public Vector sumVector;
+    public Vector difVector;
+    public Vector[] vectors;
     final String vectorDescription = "Это вектор для двумерной системы координат: ";
+
+    public Vector() {
+    }
 
     public Vector(int x, int y) {
         this.x = x;
@@ -26,25 +29,25 @@ public class Vector {
     }
 
     //Скалярное произведение векторов (x1 * x2 + y1 * y2)
-    public static void scalarProduct (Vector firstVector, Vector secondVector){
+    public void scalarProduct (Vector firstVector, Vector secondVector){
         scalarProduct = firstVector.x * secondVector.x + firstVector.y * secondVector.y;
         System.out.println("Скалярное произведение векторов:" + scalarProduct);
     }
 
     //Сложение векторов и получение нового вектора (x1 + x2), (y1 + y2)
-    public static void vectorAddition (Vector firstVector, Vector secondVector){
+    public void vectorAddition (Vector firstVector, Vector secondVector){
         sumVector = new Vector(firstVector.x + secondVector.x, firstVector.y + secondVector.y);
         System.out.println("Результат сложения векторов равен новому вектору с координатами: " + sumVector.x + ", " + sumVector.y);
     }
 
     // Разность векторов и получение нового вектора (x2 - x1), (y2 - y1)
-    public static void vectorSubtraction (Vector firstVector, Vector secondVector){
+    public void vectorSubtraction (Vector firstVector, Vector secondVector){
         difVector = new Vector(secondVector.x - firstVector.x, secondVector.y - firstVector.y);
         System.out.println("Результат разности векторов равен новому вектору с координатами: " + difVector.x + ", " + difVector.y);
     }
 
     //Метод, принимающий целое число и возвращающий массив векторов
-    public static Vector[] randomVectorsArray(int N){
+    public Vector[] randomVectorsArray(int N){
 
         vectors = new Vector[N];
 
@@ -55,7 +58,7 @@ public class Vector {
     }
 
     // Метод сравнения векторов
-    public static void vectorComparison(Vector firstVector, Vector secondVector){
+    public void vectorComparison(Vector firstVector, Vector secondVector){
         if (firstVector.vectorLength > secondVector.vectorLength){
             System.out.println("Первый вектор " + " > " + "Второго вектора " );
         }

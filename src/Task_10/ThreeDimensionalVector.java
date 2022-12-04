@@ -8,11 +8,14 @@ public class ThreeDimensionalVector {
     public int z;
     //Рассчитываемые величины
     public double vectorLength;
-    public static double scalarProduct;
-    public static ThreeDimensionalVector sumVector;
-    public static ThreeDimensionalVector difVector;
-    public static ThreeDimensionalVector[] vectors;
-    final String vectorDescription = "Это вектор для трехмерной системы координат: ";
+    public double scalarProduct;
+    public ThreeDimensionalVector sumVector;
+    public ThreeDimensionalVector difVector;
+    public ThreeDimensionalVector[] vectors;
+    public static final String vectorDescription = "Это вектор для трехмерной системы координат: ";
+
+    public ThreeDimensionalVector() {
+    }
 
     public ThreeDimensionalVector(int x, int y, int z) {
         this.x = x;
@@ -28,25 +31,25 @@ public class ThreeDimensionalVector {
     }
 
     //Скалярное произведение векторов (x1 * x2 + y1 * y2 + z1 * z2)
-    public static void scalarProduct (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
+    public void scalarProduct (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
         scalarProduct = firstVector.x * secondVector.x + firstVector.y * secondVector.y + firstVector.z * secondVector.z;
         System.out.println("Скалярное произведение векторов:" + scalarProduct);
     }
 
     //Сложение векторов и получение нового вектора (x1 + x2), (y1 + y2), (z1 + z2)
-    public static void vectorAddition (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
+    public void vectorAddition (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
         sumVector = new ThreeDimensionalVector(firstVector.x + secondVector.x, firstVector.y + secondVector.y, firstVector.z + secondVector.z);
         System.out.println("Результат сложения векторов равен новому вектору с координатами: " + sumVector.x + ", " + sumVector.y + ", " + sumVector.z);
     }
 
     // Разность векторов и получение нового вектора (x2 - x1), (y2 - y1), (z2 - z1)
-    public static void vectorSubtraction (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
+    public void vectorSubtraction (ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
         difVector = new ThreeDimensionalVector(secondVector.x - firstVector.x, secondVector.y - firstVector.y, secondVector.z - firstVector.z);
         System.out.println("Результат разности векторов равен новому вектору с координатами: " + difVector.x + ", " + difVector.y + ", " + difVector.z);
     }
 
     //Метод, принимающий целое число и возвращающий массив векторов
-    public static ThreeDimensionalVector[] randomVectorsArray(int N){
+    public ThreeDimensionalVector[] randomVectorsArray(int N){
 
         vectors = new ThreeDimensionalVector[N];
 
@@ -58,7 +61,7 @@ public class ThreeDimensionalVector {
     }
 
     // Метод сравнения векторов
-    public static void vectorComparison(ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
+    public void vectorComparison(ThreeDimensionalVector firstVector, ThreeDimensionalVector secondVector){
         if (firstVector.vectorLength > secondVector.vectorLength){
             System.out.println("Первый вектор " + " > " + "Второго вектора " );
         }
