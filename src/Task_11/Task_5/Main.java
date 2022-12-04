@@ -12,6 +12,6 @@ public class Main {
         System.out.println("Текущая строка: \"" + palindrom.string + "\"\n" +
                 "Введите номер слова в строке по порядку (начиная с 0; 1 и т.д.) до " + palindrom.words.length +
                 ", чтобы проверить, является ли оно палиндромом.");
-        palindrom.isPalindrome();
+        palindrom.isPalindrome(palindrom.words[scanner.nextInt()]);
     }
 }

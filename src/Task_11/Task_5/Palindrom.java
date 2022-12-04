@@ -17,7 +17,7 @@ public class Palindrom {
         words = string.split(" ");
     }
 
-    public void isPalindrome() {
+    public void isPalindrome(String string) {
         clean = string.replaceAll("\\s+", "").toLowerCase();
         length = clean.length();
         forward = 0;
