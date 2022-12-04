@@ -2,14 +2,19 @@ package Task_11.Task_4;
 
 public class Word {
 
-    public static String[] words;
-    public static int symbolAmountInWord = 0;
-    public static int maxSymbolAmountInWord = 0;
-    public static int[] numberOfMostCommonSymbolsInEachWord = new int[2000];
-    public static int maxNumberOfMostCommonSymbolsInEachWord = 0;
-    public static int numberOfWord;
+    public String string;
+    public String[] words;
+    public int symbolAmountInWord = 0;
+    public int maxSymbolAmountInWord = 0;
+    public int[] numberOfMostCommonSymbolsInEachWord = new int[2000];
+    public int maxNumberOfMostCommonSymbolsInEachWord = 0;
+    public int numberOfWord;
 
-    public static void findWordWithMinDifSymbols(String string){
+    public Word(String string) {
+        this.string = string;
+    }
+
+    public void findWordWithMinDifSymbols(){
 
         words = string.split(" ");
 

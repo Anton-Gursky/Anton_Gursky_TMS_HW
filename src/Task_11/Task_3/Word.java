@@ -2,11 +2,16 @@ package Task_11.Task_3;
 
 public class Word {
 
-    public static String[] words;
-    public static String biggestWord = "";
-    public static String smallestWord;
+    public String string;
+    public String[] words;
+    public String biggestWord = "";
+    public String smallestWord;
 
-    public static void findBiggestWord(String string){
+    public Word(String string) {
+        this.string = string;
+    }
+
+    public void findBiggestWord(){
 
         words = string.split(" ");
 
@@ -18,7 +23,7 @@ public class Word {
         System.out.println("Слово максимальной длины: " + biggestWord);
     }
 
-    public static void findSmallestWord(String string){
+    public void findSmallestWord(){
 
         words = string.split(" ");
         smallestWord = words[0];

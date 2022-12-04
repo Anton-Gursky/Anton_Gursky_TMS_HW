@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args){
 
-        Word.findWordWithMinDifSymbols("jhdfs sgjhf hhhhjf dfgh aaajkaa");
+        Word word = new Word("jhdfs sgjhf hhhhjf dfgh aaajkaa");
+        word.findWordWithMinDifSymbols();
     }
 }

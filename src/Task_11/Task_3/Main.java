@@ -4,7 +4,10 @@ public class Main {
 
     public static void main(String[] args){
 
-        Word.findBiggestWord("There were a lot of people in the house");
-        Word.findSmallestWord("There were a lot of people in the house f");
+        Word word = new Word("There were a lot of people in the house");
+        Word secondWord = new Word("There were a lot of people in the house f");
+
+        word.findBiggestWord();
+        secondWord.findSmallestWord();
     }
 }
