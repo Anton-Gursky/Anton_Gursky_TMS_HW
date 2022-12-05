@@ -11,7 +11,7 @@ public class Vector {
     public Vector sumVector;
     public Vector difVector;
     public Vector[] vectors;
-    final String vectorDescription = "Это вектор для двумерной системы координат: ";
+    public static final String vectorDescription = "Это вектор для двумерной системы координат: ";
 
     public Vector() {
     }
