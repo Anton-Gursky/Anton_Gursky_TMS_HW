@@ -63,10 +63,10 @@ public class DocumentNumber {
     }
 
     //Проверить содержит ли номер документа последовательность abc и вывети сообщение содержит или нет(причем, abc и ABC считается одинаковой последовательностью)
-    public static void HasABC(String string){
+    public static void HasABC(String string) throws HasAbcException {
 
         if(string.contains("abc") || string.contains("ABC")){
-            System.out.println("Строка содержит abc");
+            throw new HasAbcException("Строка содержит abc");
         }
         else {
             System.out.println("Строка не содержит abc");
@@ -74,10 +74,10 @@ public class DocumentNumber {
     }
 
     //Проверить начинается ли номер документа с последовательности 555
-    public static void startsWith555(String string){
+    public static void startsWith555(String string) throws StartsFrom555Exception{
 
         if (string.indexOf("555") == 0){
-            System.out.println("Строка начинается с 555");
+            throw new StartsFrom555Exception("Строка начинается с 555");
         }
         else {
             System.out.println("Строка не начинается с 555");
@@ -85,13 +85,13 @@ public class DocumentNumber {
     }
 
     //Проверить заканчивается ли номер документа на последовательность 1a2b
-    public static void endsWith1a2b(String string){
+    public static void endsWith1a2b(String string) throws FinishedWith1a2bException{
 
         if(string.substring(string.length() - 4, string.length()).equals("1a2b")){
-            System.out.print("Строка заканчивается на 1a2b");
+            throw new FinishedWith1a2bException("Строка заканчивается на 1a2b");
         }
         else {
-            System.out.print("Строка не заканчивается на 1a2b");
+            System.out.println("Строка не заканчивается на 1a2b");
         }
     }
 }
