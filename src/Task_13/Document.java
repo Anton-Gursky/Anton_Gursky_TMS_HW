@@ -44,7 +44,7 @@ public class Document {
                     try {
                         throw new MaxLengthReachedException("Введена неверная длина номера документа");
                     } catch (MaxLengthReachedException e) {
-                        bufferedWriter.write(documentText + " " + e.getMessage() + "\n");
+                        secondBufferedWriter.write(documentText + " " + e.getMessage() + "\n");
                     }
                 }
                 else if(!documentText.startsWith("docnum") || !documentText.startsWith("contract")){
