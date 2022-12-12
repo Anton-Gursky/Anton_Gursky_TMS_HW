@@ -5,12 +5,14 @@ import java.io.*;
 public class Document {
 
     public String filePath;
+    public String line;
     public int i;
     public String documentText;
     public String pathForValidDocumentNumbers = "C:\\Users\\anton\\IdeaProjects\\ValidDocumentNumbers.txt";
     public String pathForInvalidDocumentNumbers = "C:\\Users\\anton\\IdeaProjects\\InvalidDocumentNumbers.txt";
     File file = new File(pathForValidDocumentNumbers);
     File secondFile = new File(pathForInvalidDocumentNumbers);
+
     public Document(String filePath) {
         this.filePath = filePath;
     }
@@ -24,9 +26,10 @@ public class Document {
         Writer secondWriterOfInvalidNumbers = new FileWriter(pathForInvalidDocumentNumbers);
         BufferedWriter secondBufferedWriter = new BufferedWriter(secondWriterOfInvalidNumbers);
 
-        while ((i = bufferedReader.read()) != -1){
+        while ((line = bufferedReader.readLine()) != null){
 
-            documentText = (char) i + bufferedReader.readLine();
+            documentText = line;
+
             if (documentText.length() == 15 && (documentText.startsWith("docnum") || documentText.startsWith("contract"))){
                 System.out.println(documentText + ": удовлетворяет требованиям");
                 if (!file.exists()){
@@ -35,6 +38,7 @@ public class Document {
                     bufferedWriter.write(documentText + "\n");
 //                Files.write(Paths.get(pathForValidDocumentNumbers),documentText.getBytes(), StandardOpenOption.APPEND);
             }
+
             else{
                 System.out.println(documentText + ": не удовлетворяет требованиям");
                 if (!secondFile.exists()){
