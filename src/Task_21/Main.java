@@ -13,5 +13,6 @@ public class Main {
 //        filePath = scanner.nextLine();
         filePath = "C:\\Users\\anton\\IdeaProjects\\Person.txt";
         PersonService.getAll(filePath);
+        PersonService.writeToFile("C:\\Users\\anton\\IdeaProjects\\Person2.txt");
     }
 }
