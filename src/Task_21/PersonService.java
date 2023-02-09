@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 public class PersonService {
 
-    public static Set<Person> people = new TreeSet<>();
+    public static Set<Person> people = new TreeSet<>(new Comparator());
     public static String strInfo;
     public static int quantityOfWomen = 0;
     public static int quantityOfMen = 0;
