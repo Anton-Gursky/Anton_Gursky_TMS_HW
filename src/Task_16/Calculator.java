@@ -6,7 +6,7 @@ public class Calculator {
 
     public String mathExpression;
     public String[] temp;
-    public List<String> variables= new ArrayList<>();
+    public List<Integer> variables= new ArrayList<>();
     public int result = 0;
     public LinkedHashMap <String, Integer> romanDigits;
     public String string;
@@ -18,50 +18,52 @@ public class Calculator {
 
     public int calculate(){
 
-        if (mathExpression.contains("+")){
+        if (mathExpression.contains(" + ")){
 
-            temp = mathExpression.split("\\+");
-            variables.addAll(Arrays.asList(temp));
+            temp = mathExpression.split(" \\+ ");
+            addToArrayList();
 
-                for (int i = 0; i < variables.size(); i++) {
-                    result += Integer.parseInt(variables.get(i));
-                }
+            for (int i = 0; i < variables.size(); i++) {
+                    result += variables.get(i);
             }
+        }
         else if (mathExpression.contains("-")) {
 
-            temp = mathExpression.split("-");
-            variables.addAll(Arrays.asList(temp));
-            result = Integer.parseInt(variables.get(0));
+            temp = mathExpression.split(" - ");
+            addToArrayList();
+            result = variables.get(0);
 
             for (int i = 1; i < variables.size(); i++) {
-                result -= Integer.parseInt(variables.get(i));
+                result -= variables.get(i);
             }
 
         } else if (mathExpression.contains("*")) {
 
-            temp = mathExpression.split("\\*");
-            variables.addAll(Arrays.asList(temp));
-            result = Integer.parseInt(variables.get(0));
+            temp = mathExpression.split(" \\* ");
+            addToArrayList();
+            result = variables.get(0);
 
             for (int i = 1; i < variables.size(); i++) {
-                result *= Integer.parseInt(variables.get(i));
+                result *= variables.get(i);
             }
 
         } else if (mathExpression.contains("/")) {
 
-            temp = mathExpression.split("/");
-            variables.addAll(Arrays.asList(temp));
-            result = Integer.parseInt(variables.get(0));
+            temp = mathExpression.split(" / ");
+            addToArrayList();
+            result = variables.get(0);
 
             for (int i = 1; i < variables.size(); i++) {
-                result /= Integer.parseInt(variables.get(i));
+                result /= variables.get(i);
             }
 
-        } else {
+        }
+        else {
             System.out.println("Не введен знак (+, -, *, /)");
         }
 
         System.out.println(" = " + result);
+        System.out.println("Число Фибоначчи, стоящее в последовательности на месте " + result + " = " + nthFibonacciDigit(result));
         return result;
     }
 
@@ -106,5 +108,65 @@ public class Calculator {
             sb.append(str);
         }
         return sb.toString();
+    }
+
+    public int toArabic(String input){
+
+        String romanNumeral = input.toUpperCase();
+        int secondResult = 0;
+        List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
+        int i = 0;
+
+        while ((romanNumeral.length() > 0) && (i < romanNumerals.size())) {
+
+            RomanNumeral symbol = romanNumerals.get(i);
+
+            if (romanNumeral.startsWith(symbol.name())) {
+
+                secondResult += symbol.getValue();
+                romanNumeral = romanNumeral.substring(symbol.name().length());
+
+            } else {
+
+                i++;
+            }
+        }
+
+        if (romanNumeral.length() > 0) {
+            throw new IllegalArgumentException(input + " cannot be converted to a Roman Numeral");
+        }
+
+        return secondResult;
+    }
+
+    public void addToArrayList(){
+
+        for (int i = 0; i < temp.length; i++) {
+
+            if(temp[i].matches("^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$")){
+                variables.add(toArabic(temp[i]));
+            }
+            else {
+                variables.add(Integer.parseInt(temp[i]));
+            }
+        }
+    }
+
+    public int nthFibonacciDigit(int n){
+
+        if(n == 0 || n == 1){
+            return n;
+        }
+
+        int n0 = 0;
+        int n1 = 1;
+        int tempNthTerm;
+
+        for (int i = 2; i < n; i++) {
+            tempNthTerm = n0 + n1;
+            n0 = n1;
+            n1 = tempNthTerm;
+        }
+        return n1;
     }
 }
