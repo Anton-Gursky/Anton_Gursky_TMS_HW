@@ -2,10 +2,10 @@ package Task_21;
 
 public class Person {
 
-    public String name;
-    public String surname;
-    public String sex;
-    public String age;
+    private String name;
+    private String surname;
+    private String sex;
+    private String age;
 
     public Person(String name, String surname, String sex, String age){
         this.name = name;
@@ -14,13 +14,44 @@ public class Person {
         this.age = age;
     }
 
+    public Person() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", sex='" + sex + '\'' +
-                ", age='" + age + '\'' +
-                '}';
+        return name + "," + surname + "," + sex + "," + age;
     }
 }
