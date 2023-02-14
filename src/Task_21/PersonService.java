@@ -21,21 +21,22 @@ public class PersonService {
             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
             BufferedReader reader = new BufferedReader(isr);
 
-            while ((strInfo = reader.readLine()) != null) {
-                String[] arrayInfo = strInfo.split(",");
-                Person person;
-                people.add(person = new Person(arrayInfo[0], arrayInfo[1], arrayInfo[2], arrayInfo[3]));
+            try {
+                while ((strInfo = reader.readLine()) != null) {
+                    String[] arrayInfo = strInfo.split(",");
 
-//                Другой способ создания нового объекта Person
-//                people.add(person = new Person());
-//                person.setName(arrayInfo[0]);
-//                person.setSurname(arrayInfo[1]);
-//                person.setSex(arrayInfo[2]);
-//                person.setAge(arrayInfo[3]);
+                    Person person = new Person();
+                    person.setName(arrayInfo[0]);
+                    person.setSurname(arrayInfo[1]);
+                    person.setSex(arrayInfo[2]);
+                    person.setAge(arrayInfo[3]);
+                    people.add(person);
+                }
+            } finally {
+                fis.close();
+                isr.close();
+                reader.close();
             }
-            fis.close();
-            isr.close();
-            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,11 +80,13 @@ public class PersonService {
             OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
             BufferedWriter writer = new BufferedWriter(osw);
 
-            for (Person p : people) {
-                writer.write(p.toString() + "\n");
+            try {
+                for (Person p : people) {
+                    writer.write(p.toString() + "\n");
+                }
+            } finally {
+                writer.close();
             }
-
-            writer.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

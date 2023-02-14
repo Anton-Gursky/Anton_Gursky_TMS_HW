@@ -7,13 +7,6 @@ public class Person {
     private String sex;
     private String age;
 
-    public Person(String name, String surname, String sex, String age){
-        this.name = name;
-        this.surname = surname;
-        this.sex = sex;
-        this.age = age;
-    }
-
     public Person() {
 
     }
