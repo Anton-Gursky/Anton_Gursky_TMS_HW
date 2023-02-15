@@ -3,55 +3,67 @@ package Task_21;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
-import java.util.Set;
 import java.util.TreeSet;
 
 public class PersonService {
 
-    public static Set<Person> people = new TreeSet<>(new FirstComparator());
-    public static String strInfo;
-    public static int quantityOfWomen = 0;
-    public static int quantityOfMen = 0;
-    public static int quantityWithAgeMoreThan30 = 0;
+    public static TreeSet<Person> readFromFile(String filePath) {
 
-    public static void readFromFile(String filePath) {
-
+        TreeSet<Person> people = new TreeSet<>(new FirstComparator());
+        FileInputStream fis = null;
+        InputStreamReader isr = null;
+        BufferedReader reader = null;
         try {
-            FileInputStream fis = new FileInputStream(filePath);
-            InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
-            BufferedReader reader = new BufferedReader(isr);
+            fis = new FileInputStream(filePath);
+            isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+            reader = new BufferedReader(isr);
+            String strInfo;
 
-            try {
-                while ((strInfo = reader.readLine()) != null) {
-                    String[] arrayInfo = strInfo.split(",");
+            while ((strInfo = reader.readLine()) != null) {
+                String[] arrayInfo = strInfo.split(",");
 
-                    Person person = new Person();
-                    person.setName(arrayInfo[0]);
-                    person.setSurname(arrayInfo[1]);
-                    person.setSex(arrayInfo[2]);
-                    person.setAge(arrayInfo[3]);
-                    people.add(person);
-                }
-            } finally {
-                fis.close();
-                isr.close();
-                reader.close();
+                Person person = new Person();
+                person.setName(arrayInfo[0]);
+                person.setSurname(arrayInfo[1]);
+                person.setSex(arrayInfo[2]);
+                person.setAge(arrayInfo[3]);
+                people.add(person);
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (fis != null) {
+                    fis.close();
+                }
+                if (isr != null) {
+                    isr.close();
+                }
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        //Вывод Tree Set (Проверка)
-        Iterator<Person> iterator = people.iterator();
-        System.out.println("Tree set:");
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        return (people);
+
+//        //Вывод Tree Set (Проверка)
+//        Iterator<Person> iterator = people.iterator();
+//        System.out.println("Tree set:");
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
     }
 
-    public static void calculateAmountsOfPeople() {
+    public static String calculateAmountsOfPeople(TreeSet<Person> setOfPeople) {
 
-        Iterator<Person> iterator = people.iterator();
+        Iterator<Person> iterator = setOfPeople.iterator();
+        int quantityOfWomen = 0;
+        int quantityOfMen = 0;
+        int quantityWithAgeMoreThan30 = 0;
+
         while (iterator.hasNext()) {
             Person p;
             if ((p = iterator.next()).getSex().equals("M")) {
@@ -64,24 +76,27 @@ public class PersonService {
                 quantityWithAgeMoreThan30++;
             }
         }
+        return ("Количество людей с возрастом более 30: " + quantityWithAgeMoreThan30 + "\n" +
+                "Количество мужчин: " + quantityOfMen + "\n" +
+                "Количество женщин: " + quantityOfWomen);
 
-        //Вывод количества людей с возрастом более 30
-        System.out.println("Количество людей с возрастом более 30: " + quantityWithAgeMoreThan30);
-
-        //Вывод количества мужчин и женщин
-        System.out.println("Количество мужчин: " + quantityOfMen);
-        System.out.println("Количество женщин: " + quantityOfWomen);
+//        //Вывод количества людей с возрастом более 30
+//        System.out.println("Количество людей с возрастом более 30: " + quantityWithAgeMoreThan30);
+//
+//        //Вывод количества мужчин и женщин
+//        System.out.println("Количество мужчин: " + quantityOfMen);
+//        System.out.println("Количество женщин: " + quantityOfWomen);
     }
 
-    public static void writeToFile() {
+    public static void writeToFile(String fileName, TreeSet<Person> people) {
 
         try {
-            FileOutputStream fos = new FileOutputStream("Person2.txt");
+            FileOutputStream fos = new FileOutputStream(fileName);
             OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
             BufferedWriter writer = new BufferedWriter(osw);
 
             try {
-                for (Person p : people) {
+                for (Object p : people) {
                     writer.write(p.toString() + "\n");
                 }
             } finally {
