@@ -2,8 +2,8 @@ package Task_22;
 
 public class Document {
 
-    public int documentNumber;
-    public String creationDate;
+    private int documentNumber;
+    private String creationDate;
 
     public Document() {
 
