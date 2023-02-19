@@ -2,7 +2,6 @@ package Task_21;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class PersonService {
@@ -59,20 +58,18 @@ public class PersonService {
 
     public static String calculateAmountsOfPeople(TreeSet<Person> setOfPeople) {
 
-        Iterator<Person> iterator = setOfPeople.iterator();
         int quantityOfWomen = 0;
         int quantityOfMen = 0;
         int quantityWithAgeMoreThan30 = 0;
 
-        while (iterator.hasNext()) {
-            Person p;
-            if ((p = iterator.next()).getSex().equals("M")) {
+        for(Person i : setOfPeople){
+            if(i.getSex().equals("M")){
                 quantityOfMen++;
-            } else {
+            }else {
                 quantityOfWomen++;
             }
 
-            if (Integer.parseInt(p.getAge()) > 30) {
+            if(Integer.parseInt(i.getAge()) > 30){
                 quantityWithAgeMoreThan30++;
             }
         }
@@ -100,6 +97,8 @@ public class PersonService {
                     writer.write(p.toString() + "\n");
                 }
             } finally {
+                fos.close();
+                osw.close();
                 writer.close();
             }
         } catch (IOException e) {

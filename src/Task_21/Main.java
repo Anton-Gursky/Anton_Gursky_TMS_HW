@@ -14,7 +14,8 @@ public class Main {
 //        System.out.println("Введите путь к файлу:");
 //        filePath = scanner.nextLine();
         filePath = "C:\\Users\\anton\\IdeaProjects\\Person.txt";
-        System.out.println(setOfPeople = PersonService.readFromFile(filePath));
+        setOfPeople = PersonService.readFromFile(filePath);
+        System.out.println(setOfPeople);
         System.out.println(PersonService.calculateAmountsOfPeople(setOfPeople));
         PersonService.writeToFile("Person2.txt", setOfPeople);
     }
