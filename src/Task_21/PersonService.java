@@ -62,14 +62,14 @@ public class PersonService {
         int quantityOfMen = 0;
         int quantityWithAgeMoreThan30 = 0;
 
-        for(Person i : setOfPeople){
-            if(i.getSex().equals("M")){
+        for (Person i : setOfPeople) {
+            if (i.getSex().equals("M")) {
                 quantityOfMen++;
-            }else {
+            } else {
                 quantityOfWomen++;
             }
 
-            if(Integer.parseInt(i.getAge()) > 30){
+            if (Integer.parseInt(i.getAge()) > 30) {
                 quantityWithAgeMoreThan30++;
             }
         }
@@ -87,22 +87,33 @@ public class PersonService {
 
     public static void writeToFile(String fileName, TreeSet<Person> people) {
 
+        FileOutputStream fos = null;
+        OutputStreamWriter osw = null;
+        BufferedWriter writer = null;
         try {
-            FileOutputStream fos = new FileOutputStream(fileName);
-            OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
-            BufferedWriter writer = new BufferedWriter(osw);
+            fos = new FileOutputStream(fileName);
+            osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+            writer = new BufferedWriter(osw);
 
-            try {
-                for (Object p : people) {
-                    writer.write(p.toString() + "\n");
-                }
-            } finally {
-                fos.close();
-                osw.close();
-                writer.close();
+            for (Object p : people) {
+                writer.write(p.toString() + "\n");
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+                if (fos != null) {
+                    fos.close();
+                }
+                if (osw != null) {
+                    osw.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
